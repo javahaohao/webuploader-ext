@@ -174,6 +174,12 @@
 										'z-index':2
 									})
 				);
+				self.$placeHolder.css({
+					border:'0px',
+					'min-height':'0px',
+					'padding-top':'0px'
+				});
+				self.container.find( '.queueList' ).css({'margin':'0px'});
 			};
 			//执行模式选择
 			modeTypeProcess[self.uploaderOptions.modeType]&&modeTypeProcess[self.uploaderOptions.modeType]();

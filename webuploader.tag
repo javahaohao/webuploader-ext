@@ -30,7 +30,7 @@
 <link rel="stylesheet" type="text/css" href="${contextPath}/static/common/css/webuploader.extends.css" />
 <div id="wrapper" style="margin: 0 auto;">
 	<p id="btn_p">
-		<button class="btn btn-primary btn-xs no-border uploadBtn" type="button" id="${id}-start-upload">
+		<button class="btn btn-primary btn-xs no-border uploadBtn" type="button" id="${id}-start-upload" style="${auto?'display:none':''}">
 			<i class="ace-icon fa fa-cloud-upload align-top bigger-125"></i>
 			<span id="upload-type">开始上传</span>
 		</button>
@@ -38,14 +38,14 @@
 			<i class="ace-icon fa fa-eraser align-top bigger-125"></i>
 			清空队列
 		</button>
-		<button class="btn btn-success btn-xs no-border" type="button" id="${id}-input-upload" style="${auto?'display:none':''}">
+		<button class="btn btn-success btn-xs no-border" type="button" id="${id}-input-upload">
 		</button>
 	</p>
     <div id="container">
         <!--头部，文件选择-->
         <div id="uploader" class="${id}uploader-container">
             <div class="queueList">
-                <div id="dndArea" class="placeholder">
+                <div id="${id}dndArea" class="placeholder">
                     <div id="filePicker">
                     	<button class="btn btn-primary btn-xs no-border" type="button" id="single_pic_btn" style="display: none">
 							<i class="ace-icon fa fa-plus-circle align-top bigger-125"></i>
@@ -91,7 +91,7 @@ $(function() {
         superId:'${superId}',
         auto:${empty auto?'false':auto},
         fileVal:'${empty fileVal?"fileInput":fileVal}',
-        dnd: '#dndArea',
+        dnd: '#${id}dndArea',
         paste: document.body,
         chunked: ${empty chunked?"true":chunked},
         //默认分片大小
